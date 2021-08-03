@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Reflection;
 using System.Collections.Generic;
 
@@ -32,10 +32,10 @@ namespace Factory
 		}
 
 		public T Generate<T>(string property)
-        {
+		{
 			T value;
 			switch (property)
-            {
+			{
 				case "name":
 					value = ConvertValue<T, string>(NameGenerate());
 					break;
@@ -45,9 +45,9 @@ namespace Factory
 				default:
 					value = ConvertValue<T, T>(default);
 					break;
-            }
+			}
 			return value;
-        }
+		}
 
 		private static string NameGenerate()
 		{
@@ -63,15 +63,15 @@ namespace Factory
 		}
 
 		private static int AgeGenerate()
-        {
+		{
 			Random rnd = new Random();
 			return rnd.Next(1, 13);
-        }
+		}
 
 		private static T ConvertValue<T,U>(U value)
-        {
+		{
 			return (T)Convert.ChangeType(value, typeof(T));
-        }
+		}
 	}
 
 	public class Program
@@ -82,10 +82,10 @@ namespace Factory
 			var listCats = Cat.Create(10);
 
 
-            foreach (var cat in listCats)
-            {
-                Console.WriteLine(cat.gender);
-            }
-        }
+			foreach (var cat in listCats)
+			{
+				Console.WriteLine(cat.gender);
+			}
+		}
 	}
 }
