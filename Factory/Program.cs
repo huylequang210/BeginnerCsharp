@@ -48,7 +48,8 @@ namespace Factory
 			}
 			return value;
 		}
-
+		
+		// from stackoverflow
 		private static string NameGenerate()
 		{
 			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -61,7 +62,7 @@ namespace Factory
 			var finalString = new string(stringChars);
 			return finalString;
 		}
-
+		
 		private static int AgeGenerate()
 		{
 			Random rnd = new Random();
